@@ -1,7 +1,7 @@
 import requests
 
 # Define the API endpoint and headers
-url = "https://api.astria.ai/tunes/690204/prompts"  # Use the base model ID
+url = "https://api.astria.ai/tunes/1478736/prompts"  # Use the base model ID
 headers = {
     "Authorization": "Bearer sd_QSBzgNirXJykHtLrT9Fh5ASqxafMbn"
 }

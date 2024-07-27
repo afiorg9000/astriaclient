@@ -8,7 +8,7 @@ headers = {
 
 # Define the form data
 data = {
-    "tune[title]": "Gisele-Bundchen-ultimate-attempt1",
+    "tune[title]": "LOLGisele-Bundchen-ultimate-attempt1",
     "tune[name]": "woman",
     "tune[branch]": "sd15",
     "tune[callback]": "https://optional-callback-url.com/webhooks/astria?user_id=1&tune_id=1",
