@@ -8,17 +8,16 @@ headers = {
 
 # Define the form data
 data = {
-    "tune[title]": "Gisele-Bundchensss",
+    "tune[title]": "Gisele-Bundchen-ultimate-attempt1",
     "tune[name]": "woman",
     "tune[branch]": "sd15",
     "tune[callback]": "https://optional-callback-url.com/webhooks/astria?user_id=1&tune_id=1",
-    "tune[token]": "ohwx",
+    "tune[token]": "sks",
     "tune[prompts_attributes][0][callback]": "https://optional-callback-url.com/webhooks/astria?user_id=1&prompt_id=1&tune_id=1",
     "tune[prompts_attributes][0][text]": "Sample prompt text"
-
 }
 
-# Define the file paths
+# Define the file paths for images
 file_paths = [
     "/Users/sofiaisabellamendezdantas/astriaclient/images/02bf0816baef1e3bee1de7a5e33799dc.jpg",
     "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Alto_Verão_2018_por_Gisele_Bündchen_07.jpg",
@@ -32,18 +31,13 @@ file_paths = [
     "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Fim_de_Ano_2018_com_Gisele_Bündchen_04.jpg",
     "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Fim_de_Ano_2018_com_Gisele_Bündchen_05.jpg",
     "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_e_Gisele_Bündchen,_Coleção_Verão_2017_-_08.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bündchen_at_the_Fashion_Rio_Inverno_2006_(cropped).jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Verão_Arezzo_Brasil_2019_por_Gisele_Bündchen_04.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Verão_Arezzo_Brasil_2019_por_Gisele_Bündchen_17.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/zhizel-bundhen-gisele-5894.jpg"
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bündchen_at_the_Fashion_Rio_Inverno_2006_(cropped).jpg"
 ]
 
 # Create the files dictionary
-files = {}
-for idx, file_path in enumerate(file_paths):
-    files[f"tune[images][{idx}]"] = open(file_path, "rb")
+files = [("tune[images][]", (open(file_path, "rb"))) for file_path in file_paths]
 
-# Send the POST request
+# Send the POST request to create the tune
 response = requests.post(url, headers=headers, data=data, files=files)
 
 # Print the response

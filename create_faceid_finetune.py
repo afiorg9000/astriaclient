@@ -6,14 +6,14 @@ headers = {
     "Authorization": "Bearer sd_QSBzgNirXJykHtLrT9Fh5ASqxafMbn"
 }
 
-# Define the form data for FaceID fine-tune
+# Define the form data for the FaceID fine-tune
 data = {
-    "tune[title]": "Sweaterrr-FaceID",
+    "tune[title]": "Sweater-FaceID-ultimate-attempt1",
     "tune[name]": "shirt",
     "tune[model_type]": "faceid",
     "tune[callback]": "https://optional-callback-url.com/webhooks/astria?user_id=1&tune_id=2",
     "tune[base_tune_id]": 690204,  # Hard-coded base tune ID for Realistic Vision v5.1
-    "tune[branch]": "sd15"  # Change branch to sd15
+    "tune[branch]": "sd15"
 }
 
 # Define the file path for the garment image
