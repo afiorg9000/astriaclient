@@ -1,15 +1,13 @@
 import requests
 
-# Define the API endpoint and headers
 url = "https://api.astria.ai/tunes"
 headers = {
     "Authorization": "Bearer sd_QSBzgNirXJykHtLrT9Fh5ASqxafMbn"
 }
 
-# Define the form data
 data = {
-    "tune[title]": "LOLGisele-Bundchen-ultimate-attempt1",
-    "tune[name]": "woman",
+    "tune[title]": "AshleyGraham", # Add the name of your Avatar
+    "tune[name]": "woman", # Add wether its a woman or man here
     "tune[branch]": "sd15",
     "tune[callback]": "https://optional-callback-url.com/webhooks/astria?user_id=1&tune_id=1",
     "tune[token]": "sks",
@@ -17,29 +15,31 @@ data = {
     "tune[prompts_attributes][0][text]": "Sample prompt text"
 }
 
-# Define the file paths for images
+# Add the images to create the avatar
 file_paths = [
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/02bf0816baef1e3bee1de7a5e33799dc.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Alto_Verão_2018_por_Gisele_Bündchen_07.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Fim_de_Ano_2018_com_Gisele_Bündchen_02.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bündchen_na_final_da_Copa_do_Mundo_de_2014.jpeg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bundchen3.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/GB.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/GiseleBundchen.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_B.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bundchen-011_(16251942456)_(cropped2).jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Fim_de_Ano_2018_com_Gisele_Bündchen_04.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_Fim_de_Ano_2018_com_Gisele_Bündchen_05.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Arezzo_e_Gisele_Bündchen,_Coleção_Verão_2017_-_08.jpg",
-    "/Users/sofiaisabellamendezdantas/astriaclient/images/Gisele_Bündchen_at_the_Fashion_Rio_Inverno_2006_(cropped).jpg"
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/1505372947-ashley-graham-1.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/190802_ITG_AshleyGraham_0202_LowRes.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/220801130126-ashley-graham-lead.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/30AD32EE00000578-3426481-image-m-2_1454336330151.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/3d59b18cdd7185e5091b0541cdb9ad3e.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/4466d17fd8769e0648e8dbbf1d7a8aa1.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/579795c0b8efc82753e72a0d649de47b.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/640px-Ashley_Graham_at_SI_Swim_City_2016.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/6b57056ad48d437364886289e152377b.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/a91404d5101ba35e163226ffc29ce4b5.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/Ashley_Graham_VMA_backstage.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/Ashley_Graham_in_2015.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/Ashley_Graham_portrait_2016.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/ec8461f6a181845ef5a6faa244bb5e5b.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/f1a6652cd8a8f69e2a7d8a655b97375e.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/gettyimages-885659602_ashley-graham.jpg",
+    "/Users/sofiaisabellamendezdantas/astriaclient/images/untitled-design.jpg"
 ]
 
-# Create the files dictionary
+
 files = [("tune[images][]", (open(file_path, "rb"))) for file_path in file_paths]
 
-# Send the POST request to create the tune
 response = requests.post(url, headers=headers, data=data, files=files)
 
-# Print the response
 print(response.status_code)
 print(response.json())
